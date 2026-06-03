@@ -1,26 +1,31 @@
 {
-  "name": "spotify-discord-selfbot-rpc",
-  "version": "3.0.0",
-  "description": "Spotify Discord RPC with Real-time Lyrics using Discord Selfbot",
+  "name": "spobotself",
+  "version": "3.1.0",
+  "description": "Spotify Discord RPC with Real-time Lyrics using Discord Selfbot and Enhanced Lyrics API",
   "main": "main.js",
   "scripts": {
     "start": "node main.js",
-    "auth": "node spotify-auth.js"
+    "auth": "node spotify-auth.js",
+    "dev": "node --watch main.js"
   },
   "keywords": [
     "spotify",
     "discord",
     "rpc",
     "lyrics",
-    "selfbot"
+    "selfbot",
+    "spobotself"
   ],
-  "author": "",
+  "author": "blackeker",
   "license": "MIT",
+  "engines": {
+    "node": ">=18.x"
+  },
   "dependencies": {
     "axios": "^1.6.2",
     "discord.js-selfbot-rpc": "^1.0.1",
     "discord.js-selfbot-v13": "^3.7.1",
-    "dotenv": "^17.4.2",
+    "dotenv": "^16.4.5",
     "spotify-web-api-node": "^5.0.2"
   }
 }
