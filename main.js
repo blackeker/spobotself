@@ -189,6 +189,11 @@ async function updatePresence() {
             ]);
         
         client.user.setActivity(presence);
+        
+        // Durum logu
+        const progressMin = Math.floor(progress / 60);
+        const progressSec = Math.floor(progress % 60).toString().padStart(2, '0');
+        process.stdout.write(`\r📡 Durum: ${item.artists[0].name} - ${item.name} [${progressMin}:${progressSec}] | RPC Güncellendi...   `);
 
     } catch (err) {
         console.error('❌ Ana döngüde hata:', err.message);
@@ -204,7 +209,7 @@ async function updatePresence() {
 client.on('ready', async () => {
     console.log('\n🚀 ====================================');
     console.log(`✅ Discord'a giriş yapıldı: ${client.user.tag}`);
-    console.log('🎵 Spotify Discord RPC başlatıldı.');
+    console.log('📡 Bot Durumu: Aktif - Spotify Verileri Bekleniyor...');
     console.log('====================================\n');
     
     await refreshSpotifyToken();
